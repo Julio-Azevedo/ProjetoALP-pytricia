@@ -2,7 +2,7 @@ import re as regex
 from tinydb import TinyDB
 
 # Criando o banco
-db = TinyDB('users.json')
+db = TinyDB('users.json', indent = 4)
 
 # Nomeando a tabela de usuário no banco
 users = db.table('users')
