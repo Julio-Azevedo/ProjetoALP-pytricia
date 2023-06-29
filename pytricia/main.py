@@ -1,8 +1,8 @@
 import os
-from mainMenu import show_main_menu
-from login import login
-from register import register
-from about import show_info
+from main_menu.mainMenu import show_main_menu
+from login.login import login
+from register.register import register
+from about.about import show_info
 
 # Chamando o menu principal
 opt = show_main_menu()
