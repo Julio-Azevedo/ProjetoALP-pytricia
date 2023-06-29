@@ -1,5 +1,6 @@
 import os
 
+# Definindo a função do menu principal
 def show_main_menu():
     os.system("clear||cls")
     print("==================")
