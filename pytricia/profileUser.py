@@ -1,7 +1,9 @@
 import os
-from user_roles.logMenu import show_log_menu
+from profileMenu import show_log_menu
+from profileEdit import edit_profile
+from mainMenu import show_main_menu
 
-def logged(search):
+def logged(search, username):
     opt = show_log_menu(search)
     
     while opt != "0":
@@ -13,10 +15,11 @@ def logged(search):
             print(f"Data de nascimento do usuário: {search['birth']}")
         elif opt == "2":
             os.system("clear||cls")
-            print("A fazer")
+            edit_profile(search, username, edited=False)
+            show_main_menu()
         elif opt == "3":
             os.system("clear||cls")
-            print("Deslogando...")
+            print("Previsão")
             break
         else:
             print("Opção invalida")
