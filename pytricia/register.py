@@ -1,17 +1,37 @@
+import re as regex
 from tinydb import TinyDB
 
+# Criando o banco
 db = TinyDB('users.json')
+
+# Nomeando a tabela de usuário no banco
+users = db.table('users')
 
 def register():
     # Processo de cadastro
     print("Iniciando processo de cadastro")
-    username = input("Informe seu nome de usuário: ")
-    password = input("Informe sua senha: ")
     
+    username = input("Informe seu nome de usuário: ")
+    while True:
+        date = input("Informe sua data de nascimento: ")
+        if valid_date(date):
+            break
+        else:
+            print("Formato invalido, informe a data no formato dd/mm/aaaa")        
+    password = input("Informe sua senha: ")
+
     # Criando o usuário
-    user = {'username': username, 'password': password}
+    user = {'username': username, 'password': password, 'birth': date}
 
     # Inserindo usuário no banco
-    db.insert(user)
+    users.insert(user)
     
     print("Cadastro com sucesso!")
+
+# Definando a função de validar o formato da data de nascimento
+def valid_date(date):
+    model = r"\d{2}/\d{2}/\d{4}"
+    if regex.match(model, date):
+        return True
+    else:
+        return False
