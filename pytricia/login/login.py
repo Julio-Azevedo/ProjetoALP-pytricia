@@ -1,7 +1,7 @@
 import os
 from register.register import db
 from tinydb import Query
-from user_roles import logged
+from user_roles.logUser import logged
 
 users = db.table('users')
 
