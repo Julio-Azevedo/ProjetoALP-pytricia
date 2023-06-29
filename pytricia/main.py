@@ -4,9 +4,10 @@ from register import register
 from about import show_info
 from login import login
 
-# chamando o menu
+# Chamando o menu principal
 opt = show_main_menu()
 
+# Código principal
 while opt != "0":
     if opt == "1":
         os.system("clear||cls")
