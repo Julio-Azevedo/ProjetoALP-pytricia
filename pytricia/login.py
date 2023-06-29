@@ -1,22 +1,16 @@
-import pickle
-from logged import logged
+from register import db
+from tinydb import Query
 
-def login(users):
+def login():
+    # Iniciando processo de login
     print("Login")
-    cpf = input("Informe seu CPF: ")
-    password = input("Senha: ")
-    users = valid_login()
+    username = input("Informe seu nome de usuário: ")
+    password = input("Informe sua senha: ")
+    # Consultando o banco de dados
+    user = Query()
+    search = db.search((user.username == username) & (user.password == password))
     
-    if cpf in users and users[cpf]['password'] == password:
-        logged()
+    if search:
+        print("Sucesso")
     else:
-        print("CPF ou senha invalidos")
-        
-def valid_login():
-    try:
-        with open("usuarios.dat", "rb") as arquivo:
-            users_serialized = arquivo.read()
-            users = pickle.loads(users_serialized)
-    except FileNotFoundError:
-        users = {}
-    return users
+        print("Usuário ou senha inválidos")
