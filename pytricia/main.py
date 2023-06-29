@@ -4,19 +4,16 @@ from register import register
 from about import show_info
 from login import login
 
-# criando dicionario dos usuarios
-users = {}
-
 # chamando o menu
 opt = show_main_menu()
 
 while opt != "0":
     if opt == "1":
         os.system("clear||cls")
-        login(users)
+        login()
     elif opt == "2":
         os.system("clear||cls")
-        register(users)
+        register()
     elif opt == "3":
         os.system("clear||cls")
         show_info()
