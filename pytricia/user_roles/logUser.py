@@ -1,5 +1,5 @@
 import os
-from logMenu import show_log_menu
+from user_roles.logMenu import show_log_menu
 
 def logged(search):
     opt = show_log_menu(search)
@@ -7,10 +7,10 @@ def logged(search):
     while opt != "0":
         if opt == "1":
             os.system("clear||cls")
-            print(f"Perfil de {search['username']}")
-            print(f"Nome de usuário: {search['username']}")
-            print(f"Senha de usuário: {search['password']}")
-            print(f"Senha de usuário: {search['birth']}")
+            print(f"Perfil do usuário")
+            print(f"Nome do usuário: {search['username']}")
+            print(f"Senha do usuário: {search['password']}")
+            print(f"Data de nascimento do usuário: {search['birth']}")
         elif opt == "2":
             os.system("clear||cls")
             print("A fazer")
