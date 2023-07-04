@@ -1,7 +1,7 @@
 import os
 from register import db
 from tinydb import Query
-from profileUser import logged
+from profileUser import logado
 
 users = db.table('users')
 
@@ -16,6 +16,6 @@ def login():
         
     if search is not None:
         os.system("clear||cls")
-        logged(search, username)
+        logado(search, username)
     else:
         print("Usuário ou senha inválidos")
