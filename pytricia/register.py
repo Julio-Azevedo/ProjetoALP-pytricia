@@ -7,14 +7,14 @@ db = TinyDB('users.json', indent = 4)
 # Nomeando a tabela de usuário no banco
 users = db.table('users')
 
-def register():
+def cadastro():
     # Processo de cadastro
     print("Iniciando processo de cadastro")
     
     username = input("Informe seu nome de usuário: ")
     while True:
         date = input("Informe sua data de nascimento: ")
-        if valid_date(date):
+        if valida_data(date):
             break
         else:
             print("Formato invalido, informe a data no formato dd/mm/aaaa")        
@@ -29,7 +29,7 @@ def register():
     print("Cadastro com sucesso!")
 
 # Definando a função de validar o formato da data de nascimento
-def valid_date(date):
+def valida_data(date):
     model = r"\d{2}/\d{2}/\d{4}"
     if regex.match(model, date):
         return True
