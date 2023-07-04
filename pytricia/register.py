@@ -1,7 +1,7 @@
 import re as regex
 from tinydb import TinyDB
 
-# Criando o banco
+# Criando o arquivo json onde ficaram salvos os usuários
 db = TinyDB('users.json', indent = 4)
 
 # Nomeando a tabela de usuário no banco
@@ -20,12 +20,13 @@ def cadastro():
             print("Formato invalido, informe a data no formato dd/mm/aaaa")        
     password = input("Informe sua senha: ")
 
-    # Criando o usuário
+    # Colocando o usuário em um dicionário
     user = {'username': username, 'password': password, 'birth': date}
 
     # Inserindo usuário no banco
     users.insert(user)
     
+    # Informando sucesso no cadastro
     print("Cadastro com sucesso!")
 
 # Definando a função de validar o formato da data de nascimento
