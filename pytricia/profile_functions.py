@@ -28,8 +28,24 @@ def horos():
             astral = random.choice(list(frases.values()))['phrase']
         print(f"Astral do dia: {datetime.date.today()}")
         print(f"Frase do horóscopo: {astral}")
+        
+    elif opt == "2":
+        with open('horoscope.json') as arquivo:
+            dados = json.load(arquivo)
+            frases = dados['phrases']
+            astral = random.choice(list(frases.values()))['phrase']
+        print(f"Astral do dia: {datetime.date.today() + datetime.timedelta(days=1)}")
+        print(f"Frase do horóscopo: {astral}")
+        
+    elif opt == "3":
+        with open('horoscope.json') as arquivo:
+            dados = json.load(arquivo)
+            frases = dados['phrases']
+            astral = random.choice(list(frases.values()))['phrase']
+        print(f"Astral da Semana: {datetime.date.today()}")
+        print(f"Frase do horóscopo: {astral}")
 
-
+    
 # Funcionalidade de ver o perfil
 def ver_perfil(search):
     print(f"Perfil do usuário")
