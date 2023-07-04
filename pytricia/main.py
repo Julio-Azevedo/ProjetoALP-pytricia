@@ -2,7 +2,7 @@ import os
 from mainMenu import show_main_menu
 from login import login
 from register import register
-from about import show_info
+from profileUser import logged
 
 # Chamando o menu principal
 opt = show_main_menu()
@@ -11,13 +11,12 @@ opt = show_main_menu()
 while opt != "0":
     if opt == "1":
         os.system("clear||cls")
-        login()
+        username = login()
+        if username:
+            logged(username)
     elif opt == "2":
         os.system("clear||cls")
         register()
-    elif opt == "3":
-        os.system("clear||cls")
-        show_info()
     else:
         print("Opção invalida!")
     input("\nPressione Enter para voltar ao menu principal")
