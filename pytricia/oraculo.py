@@ -1,6 +1,5 @@
 import os
-import datetime
-from menu import horoscopo_menu, horocopo_mensagem
+from menu import horoscopo_menu, horocopo_mensagem, numerologia_menu, numerologia_nome_mensagem
 from verifica import verifica_horoscopo
 
 
@@ -15,14 +14,28 @@ def horoscopo(busca):
             os.system("clear||cls")
             astral = verifica_horoscopo()
             horocopo_mensagem(astral, busca)
-        elif option == "2":
-            pass
-        elif option == "3":
-            pass
+            input("Pressione ENTER para voltar")
         else:
             print("Opção invalida, tente novamente!") 
-        input("Pressione ENTER para voltar")
         option = horoscopo_menu()      
+
+
+# ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+# Criando a função da numerologia
+def numerologia(busca):
+    option = numerologia_menu()
+    
+    while option != "0":
+        if option == "1":
+            os.system("clear||cls")
+            astral = verifica_horoscopo()
+            nome = busca['username'].upper()
+            numerologia_nome_mensagem(astral, nome)
+            input("Pressione ENTER para voltar")
+        else:
+            print("Opção invalida, tente novamente!")
+        option = numerologia_menu()
 
 
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
