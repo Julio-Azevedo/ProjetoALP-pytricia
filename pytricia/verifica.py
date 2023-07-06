@@ -80,3 +80,32 @@ def verifica_horoscopo():
     
     
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+# Criando função que verifica a mensagem de acordo com o nome do usuário
+def verifica_numerologia(nome):
+    tabela = {
+        '1': ['A', 'J', 'S'],
+        '2': ['B', 'K', 'T'],
+        '3': ['C', 'L', 'U'],
+        '4': ['D', 'M', 'V'],
+        '5': ['E', 'N', 'W'],
+        '6': ['F', 'O', 'X'],
+        '7': ['G', 'P', 'Y'],
+        '8': ['H', 'Q', 'Z'],
+        '9': ['I', 'R']
+    }
+    
+    nome
+    valor = 0
+    for letra in nome:
+        for chave, letras in tabela.items():
+            if letra in letras:
+                valor += int(chave)
+                break
+        if valor >= 36:
+            valor = valor % 36
+    return valor
+
+    
+
+# ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
