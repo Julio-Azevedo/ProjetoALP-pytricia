@@ -81,7 +81,7 @@ def verifica_horoscopo():
     
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
 
-# Criando função que verifica a mensagem de acordo com o nome do usuário
+# Criando função que verifica o valor numerologico do nome do usuário
 def verifica_numerologia(nome):
     tabela = {
         '1': ['A', 'J', 'S'],
@@ -102,10 +102,23 @@ def verifica_numerologia(nome):
             if letra in letras:
                 valor += int(chave)
                 break
-        if valor >= 36:
+        if valor > 36:
             valor = valor % 36
     return valor
 
     
-
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+# Criando a função que verifica a mensagem de acordo com o valor nome do usuário
+def definicao_numerologia(numero):
+    with open('sentenças.json') as arquivo:
+        dados = json.load(arquivo)
+        
+    lenormand = dados.get("lenormand")
+    if lenormand:
+        carta = lenormand.get(str(numero))
+        if carta:
+            return carta["carta"], carta["significado"]
+    
+    return None, None
+        
