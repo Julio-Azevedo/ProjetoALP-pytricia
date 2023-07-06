@@ -1,6 +1,6 @@
 import os
 import datetime
-from verifica import verifica_numerologia
+from verifica import verifica_numerologia, definicao_numerologia
 
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
 
@@ -118,15 +118,17 @@ def numerologia_menu():
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
 
 # Criando função para exibir a numerologia do nome
-def numerologia_nome_mensagem(astral,nome):
+def numerologia_nome_mensagem(definicao, nome):
     valor_nome = verifica_numerologia(nome)
+
     
     conteudo = 100
 
     print(f"+{'-' * conteudo}+")
     print(f"|{'Valor numerológico do nome ' + nome + ': ' + str(valor_nome):^{conteudo}}|")
     print(f"+{'-' * conteudo}+")
-    print(f"|{astral:^{conteudo}}|")
+    definicao_str = ', '.join(definicao)
+    print(f"|{definicao_str :^{conteudo}}|")
     print(f"+{'-' * conteudo}+")  
     
     
