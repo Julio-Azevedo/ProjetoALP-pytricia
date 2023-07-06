@@ -1,6 +1,6 @@
 import os
 from menu import horoscopo_menu, horocopo_mensagem, numerologia_menu, numerologia_nome_mensagem
-from verifica import verifica_horoscopo
+from verifica import verifica_horoscopo, definicao_numerologia, verifica_numerologia
 
 
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
@@ -29,9 +29,10 @@ def numerologia(busca):
     while option != "0":
         if option == "1":
             os.system("clear||cls")
-            astral = verifica_horoscopo()
             nome = busca['username'].upper()
-            numerologia_nome_mensagem(astral, nome)
+            numero = verifica_numerologia(nome)
+            definicao = definicao_numerologia(numero)
+            numerologia_nome_mensagem(definicao, nome)
             input("Pressione ENTER para voltar")
         else:
             print("Opção invalida, tente novamente!")
