@@ -1,0 +1,148 @@
+{
+   "lenormand": {
+      "1": {
+         "carta": "O Cavaleiro",
+         "significado": "movimento, energia, paix\u00e3o, iniciativa, boas not\u00edcias, velocidade, rapidez, realiza\u00e7\u00e3o de objetivos, liberdade, entrega, visitante"
+      },
+      "2": {
+         "carta": "O Trevo",
+         "significado": "boa sorte, esperan\u00e7a, otimismo, oportunidades, recompensas, divers\u00e3o, despreocupa\u00e7\u00e3o, mente aberta, sucesso, felicidade"
+      },
+      "3": {
+         "carta": "O Navio",
+         "significado": "jornada, viagens, partida, dist\u00e2ncia, empreendimento, sucesso, recompensas, oportunidades, estrangeiro, o que vem de longe, aventura"
+      },
+      "4": {
+         "carta": "A Casa",
+         "significado": "fam\u00edlia, seguran\u00e7a, casa, tradi\u00e7\u00e3o, ra\u00edzes, calor, aconchego, privacidade, conserva\u00e7\u00e3o, assuntos dom\u00e9sticos, estabilidade, conforto, prote\u00e7\u00e3o."
+      },
+      "5": {
+         "carta": "A \u00c1rvore",
+         "significado": "crescimento, sa\u00fade, prosperidade, esfor\u00e7o, abund\u00e2ncia, espiritual, karma, conex\u00e3o com o interior, vitalidade, equil\u00edbrio."
+      },
+      "6": {
+         "carta": "As Nuvens",
+         "significado": "confus\u00e3o, d\u00favidas, indecis\u00e3o, inseguran\u00e7a, incerteza, depress\u00e3o, tristeza, segredos ocultos, mal-entendido, instabilidade, hesita\u00e7\u00e3o, falta de clareza."
+      },
+      "7": {
+         "carta": "A Cobra",
+         "significado": "desejo, sedu\u00e7\u00e3o, trai\u00e7\u00e3o, decep\u00e7\u00e3o, intelig\u00eancia, mentiras, ci\u00fames, sexualidade, mal\u00edcia, ego\u00edsmo, rivalidade, sabedoria."
+      },
+      "8": {
+         "carta": "O Caix\u00e3o",
+         "significado": "finaliza\u00e7\u00e3o, morte, transforma\u00e7\u00f5es, conclus\u00e3o de um ciclo, perda, doen\u00e7a, recupera\u00e7\u00e3o, obst\u00e1culos, luto, tristeza, descanso."
+      },
+      "9": {
+         "carta": "O Buque",
+         "significado": "felicidade, realiza\u00e7\u00f5es, cordialidade, encanto, alegria, juventude, vida social."
+      },
+      "10": {
+         "carta": "A Foice",
+         "significado": "acidentes, decis\u00f5es precipitadas, separa\u00e7\u00e3o, liberta\u00e7\u00e3o, perigo, velocidade, imediatismo, cortes, urg\u00eancia, choque, risco."
+      },
+      "11": {
+         "carta": "O Chicote",
+         "significado": "conflito, argumentos, desafio, discuss\u00f5es, oposi\u00e7\u00e3o, raiva, \u00f3dio, m\u00e1goa, puni\u00e7\u00e3o, viol\u00eancia, obje\u00e7\u00e3o, repreens\u00e3o, disc\u00f3rdia, tens\u00e3o, antipatia"
+      },
+      "12": {
+         "carta": "Os P\u00e1ssaros",
+         "significado": "excita\u00e7\u00e3o, comunica\u00e7\u00e3o verbal, negocia\u00e7\u00f5es, mensagens, discuss\u00f5es, fofoca, conversas, express\u00e3o, ansiedade, tens\u00e3o."
+      },
+      "13": {
+         "carta": "A Crian\u00e7a",
+         "significado": "recome\u00e7os, juventude, alegria, leveza, inoc\u00eancia, imaturidade, criatividade, descobertas, filhos, divers\u00e3o."
+      },
+      "14": {
+         "carta": "A Raposa",
+         "significado": "ego\u00edsmo, trabalho, mentiras, trapa\u00e7a, alerta, cuidados, desrespeito, trai\u00e7\u00e3o, armadilha, lealdade \u00e0 fam\u00edlia, interesse pr\u00f3prio.."
+      },
+      "15": {
+         "carta": "O Urso",
+         "significado": "poder, chefia, for\u00e7a, autoridade, dom\u00ednio, influ\u00eancia, impaci\u00eancia, instabilidade, concorr\u00eancia, lideran\u00e7a, coragem"
+      },
+      "16": {
+         "carta": "A Estrela",
+         "significado": "esperan\u00e7a, desejos, inspira\u00e7\u00e3o, magia, otimismo, progresso, sonhos, espiritualidade, intui\u00e7\u00e3o.."
+      },
+      "17": {
+         "carta": "A Cegonha",
+         "significado": "mudan\u00e7as, migra\u00e7\u00e3o, nascimento, transi\u00e7\u00e3o, movimento, metamorfose, gravidez, novo ciclo."
+      },
+      "18": {
+         "carta": "O Cachorro",
+         "significado": "lealdade, amizade, respeito, confiabilidade, obedi\u00eancia, seguidores, apoio, devo\u00e7\u00e3o"
+      },
+      "19": {
+         "carta": "A Torre",
+         "significado": "autoridade, governo, solid\u00e3o, isolamento, organiza\u00e7\u00f5es, destaque, independ\u00eancia, ego, arrog\u00e2ncia, grandiosidade."
+      },
+      "20": {
+         "carta": "O Jardim",
+         "significado": "festas, rela\u00e7\u00f5es p\u00fablicas, conv\u00edvio com outras pessoas, cultura, trabalho em equipe, sociedade, socializa\u00e7\u00e3o, redes sociais, jardinagem."
+      },
+      "21": {
+         "carta": "A Montanha",
+         "significado": "dificuldades, atrasos, obst\u00e1culos, solidez, for\u00e7a, bloqueio, problemas, imparidade, desafios, teimosia, lugar remoto, viagem, fronteiras, luta."
+      },
+      "22": {
+         "carta": "O Caminho",
+         "significado": "escolhas, mudan\u00e7a, decis\u00f5es, dire\u00e7\u00e3o, separa\u00e7\u00e3o, viagens, oportunidades, independ\u00eancia, hesita\u00e7\u00e3o, jornada."
+      },
+      "23": {
+         "carta": "O Rato",
+         "significado": "ci\u00fames, desgaste, alerta, roubo, frustra\u00e7\u00f5es, ansiedade, estresse, doen\u00e7as, problemas, mentiras, duvidas."
+      },
+      "24": {
+         "carta": "O Cora\u00e7\u00e3o",
+         "significado": "relacionamento, carinho, amor, dedica\u00e7\u00e3o, alegria, familia, generosidade, perdoar, reconcilia\u00e7\u00e3o."
+      },
+      "25": {
+         "carta": "A Alian\u00e7a",
+         "significado": "contratos, compromisso, noivados, coopera\u00e7\u00e3o, ciclos, sociedade, promessa, uni\u00e3o, casamento, parceria."
+      },
+      "26": {
+         "carta": "O Livro",
+         "significado": "conhecimento, segredos, investigar, educa\u00e7\u00e3o, livros, estudos, conhecimento pessoal, sabedoria."
+      },
+      "27": {
+         "carta": "A Carta",
+         "significado": "documentos, certificados, cartas, emails, noticias, mensagem, comunica\u00e7\u00e3o, inten\u00e7\u00e3o, informa\u00e7\u00e3o, novidades."
+      },
+      "28": {
+         "carta": "O Cigano",
+         "significado": "marido, namorado, amigo, amante, companheiro, poderoso, conquista, autoridade, figura masculina importante."
+      },
+      "29": {
+         "carta": "A Cigana",
+         "significado": "esposa, namorada, amante, companheira, amiga, intui\u00e7\u00e3o, conhecimento, feminilidade, figura feminina importante."
+      },
+      "30": {
+         "carta": "Os L\u00edrios",
+         "significado": "calma, paz, pureza, tranquilidade, maturidade, \u00e9tica, moralidade, sexualidade, vid\u00eancia, sensibilidade, estabilidade."
+      },
+      "31": {
+         "carta": "O Sol",
+         "significado": "felicidade, sucesso, triunfo, alcan\u00e7ar objetivos, vitoria, energia, poder, confian\u00e7a, vitalidade, estar bem,."
+      },
+      "32": {
+         "carta": "A Lua",
+         "significado": "fantasia, desejos, intui\u00e7\u00e3o, emo\u00e7\u00f5es, medos, magia, ciclos, subconsciente, capacidade intuitiva, criatividade."
+      },
+      "33": {
+         "carta": "A Chave",
+         "significado": "importante, urgente, significante, abrir ou fechar algo, descoberta, revela\u00e7\u00e3o, solu\u00e7\u00e3o, independ\u00eancia, certeza."
+      },
+      "34": {
+         "carta": "Os Peixes",
+         "significado": "independ\u00eancia, riqueza, dinheiro, empreendedor, crescimento financeiro, valores, neg\u00f3cios, ganhos, recursos, investimentos."
+      },
+      "35": {
+         "carta": "A \u00c2ncora",
+         "significado": "seguran\u00e7a, estabilidade, ficar preso, longo prazo, porto seguro."
+      },
+      "36": {
+         "carta": "A Cruz",
+         "significado": "princ\u00edpios, sofrimento, dor, destino, religi\u00e3o, fardo, lutar, sacrif\u00edcio, liberta\u00e7\u00e3o, carma."
+      }
+   }
+}
