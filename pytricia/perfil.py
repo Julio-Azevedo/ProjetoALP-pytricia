@@ -1,6 +1,6 @@
 import os
 from menu import menu_usuario
-from oraculo import horoscopo
+from oraculo import horoscopo, numerologia
 
 
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
@@ -12,11 +12,12 @@ def perfil(busca):
     while option != "0":
         if option == "1":
             horoscopo(busca)
+        elif option == "2":
+            numerologia(busca)
         else:
-            print("Opção invalida, Tente novamente!")
-    input("Pressione ENTER para voltar")
-    option = menu_usuario()
-os.system("clear||cls")
+            print("Opção invalida, Tente novamente!")         
+        option = menu_usuario(busca)
+    os.system("clear||cls")
 
 
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
