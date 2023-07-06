@@ -1,6 +1,6 @@
 import os
 import datetime
-
+from verifica import verifica_numerologia
 
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
 
@@ -60,8 +60,6 @@ def horoscopo_menu():
     conteudo = 40
     menu_opcoes = {
         "1": "Horoscopo do dia",
-        "2": "Horoscopo de amanhã",
-        "3": "Horoscopo da semana",
         "0": "Voltar"
     }
     
@@ -93,4 +91,43 @@ def horocopo_mensagem(astral, busca):
     print(f"+{'-' * conteudo}+")    
     
 
+# ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+# Criando função para exibir o menu de numerologia
+def numerologia_menu():
+    os.system("clear||cls")
+    conteudo = 40
+    menu_opcoes = {
+        "1": "Numerologia do Nome",
+        "0": "Voltar"
+    }
+    
+    print(f"+{'-' * conteudo}+")
+    print(f"|{'Numerologia': ^{conteudo}}|")
+    print(f"+{'-' * conteudo}+")
+    print(f"|{'Menu': ^{conteudo}}|")
+    print(f"+{'-' * conteudo}+")
+    for i, j in menu_opcoes.items():
+        print(f"|{f' {i} - {j}':{conteudo}}|")
+    print(f"+{'-' * conteudo}+")
+    
+    option = input("Digite a opção desejada: ")
+    return option 
+
+
+# ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+# Criando função para exibir a numerologia do nome
+def numerologia_nome_mensagem(astral,nome):
+    valor_nome = verifica_numerologia(nome)
+    
+    conteudo = 100
+
+    print(f"+{'-' * conteudo}+")
+    print(f"|{'Valor numerológico do nome ' + nome + ': ' + str(valor_nome):^{conteudo}}|")
+    print(f"+{'-' * conteudo}+")
+    print(f"|{astral:^{conteudo}}|")
+    print(f"+{'-' * conteudo}+")  
+    
+    
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
