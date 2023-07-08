@@ -11,9 +11,13 @@ def perfil(busca):
     
     while option != "0":
         if option == "1":
-            horoscopo(busca)
+            pass
         elif option == "2":
+            horoscopo(busca)
+        elif option == "3":
             numerologia(busca)
+        elif option == "4":
+            pass
         else:
             print("Opção invalida, Tente novamente!")         
         option = menu_usuario(busca)
