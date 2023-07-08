@@ -31,8 +31,8 @@ def numerologia(busca):
             os.system("clear||cls")
             nome = busca['username'].upper()
             numero = verifica_numerologia(nome)
-            definicao = definicao_numerologia(numero)
-            numerologia_nome_mensagem(definicao, nome)
+            carta, definicao = definicao_numerologia(numero)
+            numerologia_nome_mensagem(nome, carta, definicao)
             input("Pressione ENTER para voltar")
         else:
             print("Opção invalida, tente novamente!")
