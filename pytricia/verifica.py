@@ -121,4 +121,6 @@ def definicao_numerologia(numero):
             return carta["carta"], carta["significado"]
     
     return None, None
-        
+
+
+# ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´      
