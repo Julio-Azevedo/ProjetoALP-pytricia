@@ -53,5 +53,6 @@ def cadastro():
     usuarios.insert(user)
     
     print("Cadastrado com sucesso!")
-    
+
+ 
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
