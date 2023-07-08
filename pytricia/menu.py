@@ -1,6 +1,7 @@
 import os
 import datetime
-from verifica import verifica_numerologia, definicao_numerologia
+import textwrap
+from verifica import verifica_numerologia
 
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
 
@@ -34,8 +35,10 @@ def menu_usuario(busca):
     os.system("clear||cls")
     conteudo = 40
     menu_opcoes = {
-        "1": "Horoscopo",
-        "2": "Numerologia",
+        "1": "Minhas previsões",
+        "2": "Horoscopo",
+        "3": "Numerologia",
+        "4": "Configurar perfil",
         "0": "Sair"
     }
     
@@ -118,7 +121,7 @@ def numerologia_menu():
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
 
 # Criando função para exibir a numerologia do nome
-def numerologia_nome_mensagem(definicao, nome):
+def numerologia_nome_mensagem(nome, carta, definicao):
     valor_nome = verifica_numerologia(nome)
 
     
@@ -127,9 +130,13 @@ def numerologia_nome_mensagem(definicao, nome):
     print(f"+{'-' * conteudo}+")
     print(f"|{'Valor numerológico do nome ' + nome + ': ' + str(valor_nome):^{conteudo}}|")
     print(f"+{'-' * conteudo}+")
-    definicao_str = ', '.join(definicao)
-    print(f"|{definicao_str :^{conteudo}}|")
-    print(f"+{'-' * conteudo}+")  
+    print(f"|{carta:^{conteudo}}|")
+    print(f"+{'-' * conteudo}+")
+    linhas_definicao = textwrap.wrap(definicao, conteudo)
+    for linha in linhas_definicao:
+        print(f"|{linha:^{conteudo}}|")
+    print(f"+{'-' * conteudo}+")
+
     
     
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
