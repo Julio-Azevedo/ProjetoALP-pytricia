@@ -1,6 +1,6 @@
 import os
 from menu import menu_usuario
-from oraculo import horoscopo, numerologia, config_perfil
+from oraculo import horoscopo, numerologia, config_perfil, previsoes
 
 
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
@@ -11,7 +11,7 @@ def perfil(busca):
     
     while option != "0":
         if option == "1":
-            pass
+            previsoes(busca)
         elif option == "2":
             horoscopo(busca)
         elif option == "3":
