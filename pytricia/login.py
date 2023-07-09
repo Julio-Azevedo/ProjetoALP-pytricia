@@ -19,12 +19,12 @@ def login():
     print(f"+{'-' * conteudo}+")
     
     # Processo de login
-    login_nome = input("Infome seu nome de usuário: ")
+    login_cpf = input("Infome seu nome de usuário: ")
     login_senha = input("Informe sua senha: ")
     
     # Consultando o banco 
     Usuario = Query()
-    busca = usuarios.get((Usuario.username == login_nome) & (Usuario.password == login_senha))
+    busca = usuarios.get((Usuario.cpf == login_cpf) & (Usuario.password == login_senha))
     
     if busca is not None:
         os.system("clear||cls")         
