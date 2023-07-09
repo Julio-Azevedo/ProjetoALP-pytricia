@@ -140,3 +140,28 @@ def numerologia_nome_mensagem(nome, carta, definicao):
     
     
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+def menu_config_perfil():
+    os.system("clear||cls")
+    conteudo = 40
+    menu_opcoes = {
+        "1": "Ver perfil",
+        "2": "Editar perfil",
+        "3": "Encenrrar perfil",
+        "0": "Voltar"
+    }
+    
+    print(f"+{'-' * conteudo}+")
+    print(f"|{'Configurações de perfil':^{conteudo}}|")
+    print(f"+{'-' * conteudo}+")
+    print(f"|{'Menu': ^{conteudo}}|")
+    print(f"+{'-' * conteudo}+")
+    for i, j in menu_opcoes.items():
+        print(f"|{f' {i} - {j}':{conteudo}}|")
+    print(f"+{'-' * conteudo}+")
+        
+    option = input("Digite a opção desejada: ")
+    return option
+
+
+# ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
