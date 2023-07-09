@@ -1,6 +1,6 @@
 import os
 from tinydb import TinyDB
-from verifica import valida_nome, valida_idade, verifica_signo
+from verifica import valida_nome, valida_idade, verifica_signo, valida_cpf
 
 
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
@@ -28,14 +28,19 @@ def cadastro():
         if valida_nome(nome):
             break
         else:
-            print("Nome invalido, tente novamente")
+            print("Nome invalido, Tente novamente!")
     while True:
         idade = input("Informe sua data de nascimento: ")
         if valida_idade(idade):
             break
         else:
             print("Formato invalido, informe a data no formato dd/mm/aaaa")
-    cpf = input("Informe seu CPF: ")
+    while True:
+        cpf = input("Informe seu CPF: ")
+        if valida_cpf(cpf):
+            break
+        else:
+            print("Nome invalido, Tente novamente!")
     senha = input("Informe sua senha: ")
     
     signo = verifica_signo(idade)
