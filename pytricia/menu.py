@@ -83,14 +83,16 @@ def horoscopo_menu():
 
 # Criando função para exibir a tela de mensagem do horoscopo
 def horocopo_mensagem(astral, busca):
-    conteudo = 100
+    conteudo = 60
     data_atual = datetime.date.today()
     data_formatada = data_atual.strftime('%d/%m/%Y')
     
     print(f"+{'-' * conteudo}+")
     print(f"|{'A mensagem do dia ' + data_formatada + ' para o Signo de ' + busca['sign']:^{conteudo}}|")
     print(f"+{'-' * conteudo}+")
-    print(f"|{astral:^{conteudo}}|")
+    linha_astral  = textwrap.wrap(astral, conteudo)
+    for linha in linha_astral:
+        print(f"|{linha:^{conteudo}}|")
     print(f"+{'-' * conteudo}+")    
     
 
@@ -123,9 +125,7 @@ def numerologia_menu():
 # Criando função para exibir a numerologia do nome
 def numerologia_nome_mensagem(nome, carta, definicao):
     valor_nome = verifica_numerologia(nome)
-
-    
-    conteudo = 100
+    conteudo = 60
 
     print(f"+{'-' * conteudo}+")
     print(f"|{'Valor numerológico do nome ' + nome + ': ' + str(valor_nome):^{conteudo}}|")
@@ -141,13 +141,14 @@ def numerologia_nome_mensagem(nome, carta, definicao):
     
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
 
+# Criando função para exibir o menu de configurações do perfil
 def menu_config_perfil():
     os.system("clear||cls")
     conteudo = 40
     menu_opcoes = {
         "1": "Ver perfil",
         "2": "Editar perfil",
-        "3": "Encenrrar perfil",
+        "3": "Excluir perfil",
         "0": "Voltar"
     }
     
@@ -165,3 +166,26 @@ def menu_config_perfil():
 
 
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+# Criando função para exibir a tela que exibe as previsões já realizadas
+def previsoes_menu():
+    os.system("clear||cls")
+    conteudo = 40
+    menu_opcoes = {
+        "1": "Previsões do horoscopo",
+        "2": "Previsões da numerologia",
+        "3": "Histórico de previsões",
+        "0": "Voltar"
+    }
+        
+    print(f"+{'-' * conteudo}+")
+    print(f"|{'Previsões feitas':^{conteudo}}|")
+    print(f"+{'-' * conteudo}+")
+    print(f"|{'Menu': ^{conteudo}}|")
+    print(f"+{'-' * conteudo}+")
+    for i, j in menu_opcoes.items():
+        print(f"|{f' {i} - {j}':{conteudo}}|")
+    print(f"+{'-' * conteudo}+")
+        
+    option = input("Digite a opção desejada: ")
+    return option
