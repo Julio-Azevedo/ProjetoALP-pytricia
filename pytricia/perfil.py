@@ -1,6 +1,6 @@
 import os
 from menu import menu_usuario
-from oraculo import horoscopo, numerologia
+from oraculo import horoscopo, numerologia, config_perfil
 
 
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
@@ -17,7 +17,9 @@ def perfil(busca):
         elif option == "3":
             numerologia(busca)
         elif option == "4":
-            pass
+            deletado = config_perfil(busca)
+            if deletado:
+                return
         else:
             print("Opção invalida, Tente novamente!")         
         option = menu_usuario(busca)
