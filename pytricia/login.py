@@ -27,10 +27,12 @@ def login():
     busca = usuarios.get((Usuario.username == login_nome) & (Usuario.password == login_senha))
     
     if busca is not None:
-        os.system("clear||cls")
+        os.system("clear||cls")         
         perfil(busca)
+        return
+
     else:
         print("Usuário ou senha invalidos, você será redirecionando!")
 
-
+    return
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
