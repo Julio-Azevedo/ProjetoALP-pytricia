@@ -1,6 +1,6 @@
 import os
 from cadastro import db
-from verifica import valida_nome, valida_idade
+from verifica import valida_nome, valida_idade, verifica_signo
 
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
 
@@ -14,6 +14,8 @@ def exibir_perfil(busca):
     print(f"|{'Nome de usuário: '+busca['username']:{conteudo}}|")
     print(f"+{'-' * conteudo}+") 
     print(f"|{'Data de nascimento: '+busca['age']:{conteudo}}|")
+    print(f"+{'-' * conteudo}+") 
+    print(f"|{'CPF: '+busca['cpf']:{conteudo}}|")
     print(f"+{'-' * conteudo}+") 
     print(f"|{'Senha: '+busca['password']:{conteudo}}|")
     print(f"+{'-' * conteudo}+") 
@@ -54,10 +56,12 @@ def editar_perfil(busca):
                 nova_data_nascimento = input("Digite a nova data de nascimento: ")
                 busca['age'] = nova_data_nascimento
                 if valida_idade(nova_data_nascimento):
+                    novo_signo = verifica_signo(nova_data_nascimento)
                     break
                 else:
                     print("Nome invalido, Tente novamente!")
             usuarios.update({'age': nova_data_nascimento}, doc_ids=[busca.doc_id])
+            usuarios.update({'sign':novo_signo}, doc_ids=[busca.doc_id])
             os.system("clear||cls")
             print("Data de nascimento atualizada com sucesso!")
             
@@ -113,6 +117,8 @@ def deletar_perfil(busca):
     print(f"+{'-' * conteudo}+") 
     print(f"|{'Data de nascimento: '+busca['age']:{conteudo}}|")
     print(f"+{'-' * conteudo}+") 
+    print(f"|{'CPF: '+busca['cpf']:{conteudo}}|")
+    print(f"+{'-' * conteudo}+")
     print(f"|{'Senha: '+busca['password']:{conteudo}}|")
     print(f"+{'-' * conteudo}+") 
     
