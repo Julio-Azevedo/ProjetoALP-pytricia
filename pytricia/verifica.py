@@ -27,8 +27,26 @@ def valida_idade(idade):
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
 
 # Criando função que verifica se o cpf do usuário é valido
-def valida_cpf():
-    pass
+def valida_cpf(cpf):
+    cpf = cpf.replace('.', '').replace('-', '')
+    if len(cpf) != 11 or not cpf.isdigit():  
+        return False
+
+    soma = sum(int(cpf[i]) * (10 - i) for i in range(9))
+    digito1 = 11 - (soma % 11)
+    if digito1 > 9:
+        digito1 = 0
+        
+    soma = sum(int(cpf[i]) * (11 - i) for i in range(10))
+    digito2 = 11 - (soma % 11)
+    if digito2 > 9:
+        digito2 = 0
+
+    if digito1 == int(cpf[9]) and digito2 == int(cpf[10]):
+        return True
+    else:
+        return False
+
 
 
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
