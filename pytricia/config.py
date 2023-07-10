@@ -6,7 +6,7 @@ from verifica import valida_nome, valida_idade, verifica_signo
 
 # Criando função para ver as informações do perfil
 def exibir_perfil(busca):
-    conteudo = 40
+    conteudo = 50
     
     print(f"+{'-' * conteudo}+")
     print(f"|{'Informações do perfil':^{conteudo}}|")
@@ -25,7 +25,7 @@ def exibir_perfil(busca):
 
 # Criando função para editar perfil
 def editar_perfil(busca):
-    conteudo = 40
+    conteudo = 50
     usuarios = db.table('users')
     option = editar_perfil_menu()
     while option != "0":
@@ -80,7 +80,7 @@ def editar_perfil(busca):
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
 
 def editar_perfil_menu():
-    conteudo = 40
+    conteudo = 50
     menu_opcoes = {
         "1": "Nome de usuário",
         "2": "Data de nascimento",
