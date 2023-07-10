@@ -19,7 +19,7 @@ def login():
     print(f"+{'-' * conteudo}+")
     
     # Processo de login
-    login_cpf = input("Infome seu nome de usuário: ")
+    login_cpf = input("Infome seu CPF: ")
     login_senha = input("Informe sua senha: ")
     
     # Consultando o banco 
@@ -30,9 +30,9 @@ def login():
         os.system("clear||cls")         
         perfil(busca)
         return
-
     else:
         print("Usuário ou senha invalidos, você será redirecionando!")
-
     return
+
+
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
