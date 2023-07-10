@@ -1,4 +1,5 @@
 import os
+import json
 import datetime
 import textwrap
 from verifica import verifica_numerologia
@@ -35,7 +36,7 @@ def menu_usuario(busca):
     os.system("clear||cls")
     conteudo = 40
     menu_opcoes = {
-        "1": "Minhas previsões",
+        "1": "Previsão do dia",
         "2": "Horoscopo",
         "3": "Numerologia",
         "4": "Configurar perfil",
@@ -172,9 +173,8 @@ def previsoes_menu():
     os.system("clear||cls")
     conteudo = 40
     menu_opcoes = {
-        "1": "Previsões do horoscopo",
-        "2": "Previsões da numerologia",
-        "3": "Histórico de previsões",
+        "1": "Previsão para o dia",
+        "2": "Histórico de previsões",
         "0": "Voltar"
     }
         
@@ -189,3 +189,60 @@ def previsoes_menu():
         
     option = input("Digite a opção desejada: ")
     return option
+
+
+# ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+# Criando a tela onde será exibida a previsão do dia
+def previsoes_mensagem(previsao, busca):
+    conteudo = 60
+    
+    print(f"+{'-' * conteudo}+")
+    print(f"|{'Previsão para o dia':^{conteudo}}|")
+    print(f"+{'-' * conteudo}+")
+    linha_astral  = textwrap.wrap(previsao, conteudo)
+    for linha in linha_astral:
+        print(f"|{linha:^{conteudo}}|")
+    print(f"+{'-' * conteudo}+") 
+
+
+
+def exibir_historico_menu(busca): 
+    # Buscando o cpf do usuário e dizendo que esse será o "id"
+    usuario_id = busca['cpf']
+    
+    # O nome do arquivo será "historico_usuario_cpf"
+    arquivo_historico = f"historico/historico_usuario_{usuario_id}.json"
+    
+    # Verifica se existe algum dado histórico para ser exibido
+    if not os.path.exists(arquivo_historico):
+        print("Nenhum histórico encontrado.")
+        return
+    
+    # Carrega o conteúdo do arquivo de histórico
+    with open(arquivo_historico, "r") as arquivo:
+        historico = json.load(arquivo) 
+        
+    # Exibe as previsões do histórico 
+    
+    conteudo = 60
+    if not historico:
+        print(f"+{'-' * conteudo}+")
+        print(f"|{'Historico vazio':^{conteudo}}|")
+        print(f"+{'-' * conteudo}+")
+    else:
+        print(f"+{'-' * conteudo}+")
+        print(f"|{'Historico de previsões':^{conteudo}}|")
+        print(f"+{'-' * conteudo}+")
+        for previsao in historico:
+            data_hora = previsao["data_hora"]
+            previsao_texto = previsao["previsao"]
+            linhas = textwrap.wrap(previsao_texto, conteudo - 2)
+            # Exibir a data uma vez antes das linhas quebradas
+            print(f"|{data_hora:^{conteudo}}|")
+            for linha in linhas:
+                print(f"|{linha:^{conteudo}}|")
+            print(f"+{'-' * conteudo}+")
+            
+            
+# ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
