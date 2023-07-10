@@ -1,6 +1,6 @@
 import os
-from menu import horoscopo_menu, horocopo_mensagem, numerologia_menu, numerologia_nome_mensagem, menu_config_perfil, previsoes_menu
-from verifica import verifica_horoscopo, definicao_numerologia, verifica_numerologia
+from menu import horoscopo_menu, horocopo_mensagem, numerologia_menu, numerologia_nome_mensagem, menu_config_perfil, previsoes_menu, previsoes_mensagem, exibir_historico_menu
+from verifica import verifica_horoscopo, definicao_numerologia, verifica_numerologia, salvar_historico
 from config import exibir_perfil, editar_perfil, deletar_perfil
 
 
@@ -73,8 +73,18 @@ def previsoes(busca):
     
     while option != "0":
         if option == "1":
-            print("Teste")
+            os.system("clear||cls")
+            previsao = verifica_horoscopo()
+            previsoes_mensagem(previsao, busca)
+            salvar_historico(busca, previsao)
             input("Pressione ENTER para voltar")
+        elif option == "2":
+            os.system("clear||cls")
+            exibir_historico_menu(busca)
+            input("\nPressione ENTER para voltar")
         else:
             print("Opção invalida, tente novamente!") 
-        option = menu_config_perfil()
+        option = previsoes_menu()
+        
+        
+# ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
