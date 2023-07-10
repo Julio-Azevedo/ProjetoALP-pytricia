@@ -1,13 +1,18 @@
-import re as regex
+import os
 import json
 import random
+import re as regex
+from datetime import datetime
+from unidecode import unidecode
 
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
 
 # Criando a função que verifica se o nome do usuário é valido
 def valida_nome(nome):
+    # Usando unidecode para aceitar usernames com acentuação
+    nome_valid = unidecode(nome)
     model = r"^[A-Za-z\s]+$"
-    if regex.match(model, nome):
+    if regex.match(model, nome_valid):
         return True
     else:
         return False
@@ -86,7 +91,7 @@ def verifica_signo(nascimento):
 # ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
 
 
-# Criando função que verifica a mensagem do dia para certo usuário
+# Criando função que verifica a mensagem do dia de acordo com o signo
 def verifica_horoscopo():
     with open('horoscopo.json') as arquivo:
         dados = json.load(arquivo)
@@ -141,4 +146,43 @@ def definicao_numerologia(numero):
     return None, None
 
 
-# ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´      
+# ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´   
+
+# Criando função que verifica a mensagem do dia para certo usuário
+def verifica_previsao():
+    with open('horoscopo.json') as arquivo:
+        dados = json.load(arquivo)
+        frases = dados['phrases']
+        previsao = random.choice(list(frases.values()))['phrase']
+        return previsao
+    
+
+# ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+# Criando função que salva o historico de previsões
+def salvar_historico(busca, previsao):
+    # 
+    usuario_id = busca['cpf']
+    
+    # Cria a pasta historico se não existir
+    historico = "historico"
+    if not os.path.exists(historico):
+        os.makedirs(historico)
+        
+    arquivo_historico = f"{historico}/historico_usuario_{usuario_id}.json"
+    
+    if not os.path.exists(arquivo_historico):
+        with open(arquivo_historico, "w") as arquivo:
+            json.dump([], arquivo)
+            
+    with open(arquivo_historico, "r") as arquivo:
+        historico = json.load(arquivo)
+        
+    data_hora = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    historico.append({"data_hora": data_hora, "previsao": previsao})
+    
+    with open(arquivo_historico, "w") as arquivo:
+        json.dump(historico, arquivo)
+
+
+# ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
